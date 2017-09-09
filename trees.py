@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat May 20 15:55:36 2017
-@author: Administrator
-"""
-
-
 from math import log
 import operator
 
@@ -31,22 +25,18 @@ def calcShannonEnt(dataSet):
     return shannonEnt
 
 '''
-#################################################
-###        测试calcShannonEnt(dataSet)函数   #####
-#################################################
-def creatDataSet():                             #
-    dataSet=[[1,1,'y'],                         #
-             [1,1,'y'],                         #
-             [1,0,'n'],                         #
-             [0,1,'n'],                         #
-             [0,1,'n']]                         #
-    labels=['no surfacing','flippers']          #
-    return dataSet,labels                       #
-                                                # 
-mydata,mylable=creatDataSet()                   #
-print calcShannonEnt(mydata)                    #
-                                                #
-#################################################                    
+##测试calcShannonEnt(dataSet)函数  
+def creatDataSet():                             
+    dataSet=[[1,1,'y'],                        
+             [1,1,'y'],                         
+             [1,0,'n'],                         
+             [0,1,'n'],                         
+             [0,1,'n']]                         
+    labels=['no surfacing','flippers']          
+    return dataSet,labels                       
+                                                 
+mydata,mylable=creatDataSet()                   
+print calcShannonEnt(mydata)                                                                                       
 '''
 
 # 3-2
@@ -61,22 +51,19 @@ def splitDataSet(dataSet,axis,value):  #dataSet是原始数据集，每一个元
     return retDataSet
 
 '''
-#################################################
-### 测试splitDataSet(dataSet,axis,value)函数   ##
-#################################################
-def creatDataSet():                             #
-    dataSet=[[1,1,'y'],                         #
-             [1,1,'y'],                         #
-             [1,0,'n'],                         #
-             [0,1,'n'],                         #
-             [0,1,'n']]                         #
-    labels=['no surfacing','flippers']          #
-    return dataSet,labels                       #
-                                                # 
-mydata,mylable=creatDataSet()                   #                   
-print splitDataSet(mydata,0,0)                  #
-                                                #                              
-################################################# 
+##测试splitDataSet(dataSet,axis,value)函数
+
+def creatDataSet():                             
+    dataSet=[[1,1,'y'],                         
+             [1,1,'y'],                         
+             [1,0,'n'],                         
+             [0,1,'n'],                         
+             [0,1,'n']]                         
+    labels=['no surfacing','flippers']          
+    return dataSet,labels                       
+                                                 
+mydata,mylable=creatDataSet()                                      
+print splitDataSet(mydata,0,0)                                                                                                
 '''
 
 # 3-3
@@ -103,22 +90,20 @@ def chooseBestFeatureToSplit(dataSet):
 
 
 '''
-#################################################
-### 测试chooseBestFeatureToSplit(dataSet)函数   ##
-#################################################
-def creatDataSet():                             #
-    dataSet=[[1,1,'y'],                         #
-             [1,1,'y'],                         #
-             [1,0,'n'],                         #
-             [0,1,'n'],                         #
-             [0,1,'n']]                         #
-    labels=['no surfacing','flippers']          #
-    return dataSet,labels                       #
-                                                #
-mydata,mylable=creatDataSet()                   #
-print chooseBestFeatureToSplit(mydata)          #
-################################################# 
-'''
+##测试chooseBestFeatureToSplit(dataSet)函数  
+
+def creatDataSet():                             
+    dataSet=[[1,1,'y'],                         
+             [1,1,'y'],                         
+             [1,0,'n'],                         
+             [0,1,'n'],                         
+             [0,1,'n']]                         
+    labels=['no surfacing','flippers']          
+    return dataSet,labels                       
+                                                
+mydata,mylable=creatDataSet()                   
+print chooseBestFeatureToSplit(mydata)          
+ '''
 
 # 3-3-1
 # 寻找出现次数最多的类名
@@ -159,24 +144,20 @@ def createTree(dataSet,labels):  #labels是属性列表
     return myTree
 
 '''
-#################################################
-###    测试createTree(dataSet,labels)函数      ##
-#################################################
-def creatDataSet():                             #
-    dataSet=[[1,1,'y'],                         #
-             [1,1,'y'],                         #
-             [1,0,'n'],                         #
-             [0,1,'n'],                         #
-             [0,1,'n']]                         #
-    labels=['no surfacing','flippers']          #
-    return dataSet,labels                       #
-                                                #
-mydata,mylable=creatDataSet()                   #
-mytree = createTree(mydata,mylable)             #
-print mytree                                    #
-#################################################   
+##测试createTree(dataSet,labels)函数 
+def creatDataSet():                             
+    dataSet=[[1,1,'y'],                         
+             [1,1,'y'],                         
+             [1,0,'n'],                         
+             [0,1,'n'],                         
+             [0,1,'n']]                         
+    labels=['no surfacing','flippers']          
+    return dataSet,labels                       
+                                                
+mydata,mylable=creatDataSet()                   
+mytree = createTree(mydata,mylable)             
+print mytree                                      
 '''      
-
 
 # 3-5
 # 使用文本注释绘制树节点
@@ -217,13 +198,8 @@ def createPlot():
 '''  
 
 '''
-###################################
-###   测试createPlot()函数      ##
-################################### 
-                                  #
-createPlot()                      # 
-                                  #
-###################################              
+##测试createPlot()函数                                  
+createPlot()                                                                    
 '''  
 
 # 3-6
@@ -259,22 +235,19 @@ def getTreeDepth(myTree):
     return maxDepth
                      
 '''
-#######################################################################
-#####      测试 getNumberLeafs()和getTreeDepth)函数             ########
-#######################################################################     
-def retrieveTree(i):                                                  #
-    listofTree =[{'no surfacing': {0: 'n', 1: {'flippers':            #
-                                         {0: 'n', 1: 'y'}}}},         #
-                 {'no surfacing': {0: 'n', 1: {'flippers':            #
-                    {0: {'head':{0:'no',1:'y'}}, 1: 'n'}}}}           #
-                ]                                                     #
-    return listofTree[i]                                              #
-                                                                      #
-print retrieveTree(1)                                                 #
-myTree = retrieveTree(0)                                              #
-print getNumberLeafs(myTree)                                          #
-print getTreeDepth(myTree)                                            #
-#######################################################################
+## 测试 getNumberLeafs()和getTreeDepth)函数               
+def retrieveTree(i):                                                  
+    listofTree =[{'no surfacing': {0: 'n', 1: {'flippers':            
+                                         {0: 'n', 1: 'y'}}}},         
+                 {'no surfacing': {0: 'n', 1: {'flippers':            
+                    {0: {'head':{0:'no',1:'y'}}, 1: 'n'}}}}           
+                ]                                                     
+    return listofTree[i]                                              
+                                                                      
+print retrieveTree(1)                                                 
+myTree = retrieveTree(0)                                              
+print getNumberLeafs(myTree)                                          
+print getTreeDepth(myTree)                                            
 '''        
 
 # 3-7
@@ -320,23 +293,21 @@ def createPlot(inTree):
     plotTree.yOff = 1.0                   #初始纵坐标
     plotTree(inTree,(0.5,1.0),'')        #绘制
     plt.show()                           #展示
-        
+    
 '''
-#######################################################################
-#####      测试 3-7 绘制树                                      ########
-#######################################################################     
-def retrieveTree(i):                                                  #
-    listofTree =[{'no surfacing': {0: 'n', 1: {'flippers':            #
-                                         {0: 'n', 1: 'y'}}}},         #
-                 {'no surfacing': {0: 'n', 1: {'flippers':            #
-                    {0: {'head':{0:'no',1:'y'}}, 1: 'n'}}}}           #
-                ]                                                     #
-    return listofTree[i]                                              #
-myTree = retrieveTree(0)                                              #
-myTree['no surfacing'][3]='maybe'                                     #
-createPlot(myTree)                                                    # 
-#######################################################################  
-'''        
+##测试 3-7 绘制树    
+def retrieveTree(i):                                                  
+    listofTree =[{'no surfacing': {0: 'n', 1: {'flippers':            
+                                         {0: 'n', 1: 'y'}}}},         
+                 {'no surfacing': {0: 'n', 1: {'flippers':            
+                    {0: {'head':{0:'no',1:'y'}}, 1: 'n'}}}}           
+                ]                                                     
+    return listofTree[i]                                              
+myTree = retrieveTree(0)                                              
+myTree['no surfacing'][3]='maybe'                                     
+createPlot(myTree)                                                       
+'''  
+
 # 3-8
 # 使用决策树的分类函数
 def classify(inputTree,featLabels,testVec):  
@@ -356,32 +327,31 @@ def classify(inputTree,featLabels,testVec):
     return classLabel
 
 '''
-#######################################################################
-#####                     测试 3-8 classify()函数              ########
-####################################################################### 
-def creatDataSet():                                                   #
-    dataSet=[[1,1,'y'],                                               #
-             [1,1,'y'],                                               #                        
-             [1,0,'n'],                                               #                         
-             [0,1,'n'],                                               #                        
-             [0,1,'n']]                                               #
-    labels=['no surfacing','flippers']                                #          
-    return dataSet,labels                                             #
-def retrieveTree(i):                                                  #
-    listofTree =[{'no surfacing': {0: 'n', 1: {'flippers':            #
-                                         {0: 'n', 1: 'y'}}}},         #
-                 {'no surfacing': {0: 'n', 1: {'flippers':            #
-                    {0: {'head':{0:'no',1:'y'}}, 1: 'n'}}}}           #
-                ]                                                     #
-    return listofTree[i]                                              #
-myTree = retrieveTree(0)                                              # 
-mydata,mylable=creatDataSet()                                         # 
-                                                                      # 
-print mylable                                                         # 
-print myTree                                                          # 
-print classify(myTree,mylable,[1,0])                                  # 
-print classify(myTree,mylable,[1,1])                                  #
-####################################################################### 
+## 测试 3-8 classify()函数          
+
+def creatDataSet():                                                   
+    dataSet=[[1,1,'y'],                                               
+             [1,1,'y'],                                                                      
+             [1,0,'n'],                                                                        
+             [0,1,'n'],                                                                       
+             [0,1,'n']]                                               
+    labels=['no surfacing','flippers']                                          
+    return dataSet,labels                                             
+def retrieveTree(i):                                                  
+    listofTree =[{'no surfacing': {0: 'n', 1: {'flippers':            
+                                         {0: 'n', 1: 'y'}}}},         
+                 {'no surfacing': {0: 'n', 1: {'flippers':            
+                    {0: {'head':{0:'no',1:'y'}}, 1: 'n'}}}}           
+                ]                                                     
+    return listofTree[i]                                              
+myTree = retrieveTree(0)                                               
+mydata,mylable=creatDataSet()                                          
+                                                                       
+print mylable                                                          
+print myTree                                                           
+print classify(myTree,mylable,[1,0])                                   
+print classify(myTree,mylable,[1,1])                                  
+ 
 '''
 
 # 3-9
@@ -397,20 +367,17 @@ def grabTree(filename):
     return pickle.load(fr)
 
 '''
-#######################################################################
-#####                     测试 3-9 存储决策树                    ########
-####################################################################### 
-def retrieveTree(i):                                                  #
-    listofTree =[{'no surfacing': {0: 'n', 1: {'flippers':            #
-                                         {0: 'n', 1: 'y'}}}},         #
-                 {'no surfacing': {0: 'n', 1: {'flippers':            #
-                    {0: {'head':{0:'no',1:'y'}}, 1: 'n'}}}}           #
-                ]                                                     #
-    return listofTree[i]                                              #
-myTree = retrieveTree(0)                                              #   
-storeTree(myTree,'classifierStorage.txt')                             #
-print grabTree('classifierStorage.txt')                               #
-#######################################################################
+## 测试 3-9 存储决策树               
+def retrieveTree(i):                                                  
+    listofTree =[{'no surfacing': {0: 'n', 1: {'flippers':            
+                                         {0: 'n', 1: 'y'}}}},         
+                 {'no surfacing': {0: 'n', 1: {'flippers':            
+                    {0: {'head':{0:'no',1:'y'}}, 1: 'n'}}}}           
+                ]                                                     
+    return listofTree[i]                                              
+myTree = retrieveTree(0)                                                 
+storeTree(myTree,'classifierStorage.txt')                             
+print grabTree('classifierStorage.txt')                               
 '''    
     
 # 3-10
